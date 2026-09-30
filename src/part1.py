@@ -55,7 +55,7 @@ thong_ke["Max"] = X.max()
 thong_ke["Mean"] = X.mean()
 thong_ke["Std_mau"] = X.std(ddof=1)
 thong_ke["Std_ddof0"] = X.std(ddof=0)
-# ddof=1: chia cho n-1; ddof=0: chia cho n trước khi lấy căn.
+# ddof=1: chia cho n-1; ddof=0: chia cho n trước khi lấy căn
 print("\nBảng thống kê:")
 print(thong_ke.round(6))
 thong_ke.to_csv(thu_muc / "tables/thong_ke.csv")
