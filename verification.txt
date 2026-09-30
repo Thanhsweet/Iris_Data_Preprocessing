@@ -1,0 +1,1 @@
+PASS: all four scripts executed; 150 x 4 input; Fisher cross-checked against sklearn ANOVA; PCA eigenvalues cross-checked against numpy.linalg.eigvalsh; orthonormal weights and projection verified; normalization bounds, mean, Std and Pearson invariance passed; nine embedded HTML images and MathML confirmed.
