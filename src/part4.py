@@ -1,18 +1,13 @@
-# PHẦN 4: CHUẨN HÓA DỮ LIỆU
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Xác định thư mục dự án từ vị trí file .py.
-# Ví dụ: Iris_Code_De_Hieu/src/part1.py -> Iris_Code_De_Hieu
 thu_muc = Path(__file__).resolve().parent.parent
 
-# Tạo nơi lưu hình và bảng kết quả nếu chưa có.
 (thu_muc / "figures").mkdir(exist_ok=True)
 (thu_muc / "tables").mkdir(exist_ok=True)
 
-# File iris.data không có dòng tiêu đề nên tự đặt tên cột.
 ten_cot = ["sepal_length", "sepal_width", "petal_length", "petal_width", "species"]
 data = pd.read_csv(thu_muc / "data/raw/iris.data", header=None, names=ten_cot)
 
@@ -21,8 +16,6 @@ ten_dac_trung = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
 X = data[ten_dac_trung]
 y = data["species"]
 
-# 1. Tự áp dụng công thức cho từng cột để hiểu cách tính.
-# Cả 4 cột Iris đều có Max > Min và Std > 0.
 X_minmax = pd.DataFrame()
 X_zscore = pd.DataFrame()
 for cot in ten_dac_trung:
@@ -43,7 +36,7 @@ print(X_zscore.iloc[0].round(6))
 X_minmax.to_csv(thu_muc / "tables/minmax.csv", index=False)
 X_zscore.to_csv(thu_muc / "tables/zscore.csv", index=False)
 
-# 2. Thống kê cả bốn đặc trưng trong ba trường hợp.
+#Thống kê bốn đặc trưng trong ba trường hợp.
 cac_bang = [X, X_minmax, X_zscore]
 ten_phuong_phap = ["Original", "Min-Max", "Z-score"]
 ket_qua = []
@@ -58,7 +51,7 @@ print("\nBảng so sánh trước và sau chuẩn hóa:")
 print(thong_ke.round(6).to_string(index=False))
 thong_ke.to_csv(thu_muc / "tables/normalization.csv", index=False)
 
-# 3. Vẽ cùng cặp tốt nhất từ Phần 2: petal_length và petal_width.
+# Vẽ cùng cặp tốt nhất petal_length và petal_width.
 plt.figure(figsize=(16, 5))
 for i in range(3):
     bang = cac_bang[i]
@@ -74,8 +67,7 @@ for i in range(3):
 plt.tight_layout()
 plt.savefig(thu_muc / "figures/08_normalization_scatter.png", dpi=150)
 
-# 4. Xem phân phối bằng histogram: 2 đặc trưng x 3 cách biểu diễn.
-# Mỗi biểu đồ dùng 15 bins (khoảng chia trên trục ngang).
+# 4. Xem phân phối bằng histogram
 hai_dac_trung = ["petal_length", "petal_width"]
 plt.figure(figsize=(16, 9))
 for i in range(2):
@@ -92,6 +84,5 @@ for i in range(2):
         plt.title(ten_phuong_phap[j] + " - " + cot)
 plt.tight_layout()
 plt.savefig(thu_muc / "figures/09_distributions.png", dpi=150)
-# Nếu có điểm đúng tại biên bin, sai số thập phân có thể làm nó đổi bin.
-# Điều đó không có nghĩa Min-Max hoặc Z-score thay đổi dạng phân phối.
+
 plt.show()
