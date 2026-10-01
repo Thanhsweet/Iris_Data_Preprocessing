@@ -12,7 +12,7 @@ thu_muc = Path(__file__).resolve().parent.parent
 ten_cot = ["sepal_length", "sepal_width", "petal_length", "petal_width", "species"]
 data = pd.read_csv(thu_muc / "data/raw/iris.data", header=None, names=ten_cot)
 
-# X gồm 4 cột số đo; y là cột tên loài hoa.
+# X gồm 4 cột số đo; y là cột tên loài hoa
 ten_dac_trung = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
 X = data[ten_dac_trung]
 y = data["species"]
