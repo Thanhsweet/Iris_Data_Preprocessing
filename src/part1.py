@@ -1,4 +1,3 @@
-# PHẦN 1: TÌM HIỂU DỮ LIỆU IRIS
 from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -51,7 +50,7 @@ print("\nBảng thống kê:")
 print(thong_ke.round(6))
 thong_ke.to_csv(thu_muc / "tables/thong_ke.csv")
 
-# Tính tương quan Pearson cho bốn cột số.
+# Tính tương quan Pearson cho bốn cột số
 tuong_quan = X.corr(method="pearson")
 print("\nMa trận Pearson:")
 print(tuong_quan.round(6))
