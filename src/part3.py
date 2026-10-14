@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-
+#
 thu_muc = Path(__file__).resolve().parent.parent
 
 (thu_muc / "figures").mkdir(exist_ok=True)
