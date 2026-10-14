@@ -37,7 +37,6 @@ for i in range(6):
 plt.tight_layout()
 plt.savefig(thu_muc / "figures/03_scatter_2d.png", dpi=150)
 
-
 cac_bo_ba = [
     ["sepal_length", "sepal_width", "petal_length"],
     ["sepal_length", "sepal_width", "petal_width"],

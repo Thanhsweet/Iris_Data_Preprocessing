@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 thu_muc = Path(__file__).resolve().parent.parent
 (thu_muc / "figures").mkdir(exist_ok=True)
 (thu_muc / "tables").mkdir(exist_ok=True)
