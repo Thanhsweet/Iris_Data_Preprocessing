@@ -61,7 +61,7 @@ sns.heatmap(tuong_quan, annot=True, fmt=".4f", cmap="coolwarm", vmin=-1, vmax=1)
 plt.title("Pearson correlation - Iris")
 plt.tight_layout()
 plt.savefig(thu_muc / "figures/01_heatmap.png", dpi=150)
-# Vẽ scatter plot cho 6 cặp đặc trưng
+# Vẽ scatter plot cho 6 cặp đặc trưng#
 cac_cap = []
 for i in range(len(ten_dac_trung)):
     for j in range(i + 1, len(ten_dac_trung)):
